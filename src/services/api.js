@@ -182,7 +182,7 @@ function stopGlobalLoader() {
 }
 
 const api = axios.create({
-  baseURL: 'https://neuralplay-backend.onrender.com/',
+  baseURL: 'https://neuralplay-backend.onrender.com/api',
 });
 
 
