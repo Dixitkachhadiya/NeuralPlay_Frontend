@@ -76,23 +76,25 @@ export const Layout = () => {
            </button>
         </header>
         
-        {/* Mobile Nav Scroll (Simple variant) */}
-        <div className="md:hidden flex overflow-x-auto border-b border-dark-700/50 bg-dark-800/50 hide-scrollbar">
-           {navLinks.map((link) => {
-             const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
-             return (
-               <Link
-                 key={link.name}
-                 to={link.path}
-                 className={`flex items-center gap-2 px-4 py-3 whitespace-nowrap border-b-2 text-sm ${
-                   isActive ? 'border-primary text-primary' : 'border-transparent text-slate-400'
-                 }`}
-               >
-                 {link.icon}
-                 {link.name}
-               </Link>
-             );
-           })}
+        {/* Mobile Nav Grid: always show all items */}
+        <div className="md:hidden grid grid-cols-2 gap-2 border-b border-dark-700/50 bg-dark-800/50 p-2">
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
+            return (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`flex min-h-11 items-center justify-center gap-2 rounded-lg px-2 py-2 text-xs font-medium transition-colors ${
+                  isActive
+                    ? 'bg-primary/20 text-primary border border-primary/30'
+                    : 'border border-dark-600 text-slate-300 hover:bg-dark-700/50'
+                }`}
+              >
+                {link.icon}
+                <span className="truncate">{link.name}</span>
+              </Link>
+            );
+          })}
         </div>
 
         <div className="p-4 md:p-8">
