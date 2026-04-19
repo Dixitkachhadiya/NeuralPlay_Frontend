@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-900: #0f1115;
+  --color-dark-800: #1a1d24;
+  --color-dark-700: #252a34;
+  --color-primary: #8b5cf6;
+  --color-secondary: #ec4899;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-900 text-slate-100 font-sans min-h-screen selection:bg-primary selection:text-white bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-dark-800 via-dark-900 to-black;
+  }
+}
