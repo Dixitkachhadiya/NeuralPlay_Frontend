@@ -13,10 +13,10 @@ export const Layout = () => {
   };
 
   const navLinks = [
-    { name: 'Dashboard', path: '/', icon: <LayoutDashboard size={20} /> },
-    { name: 'Play Game', path: '/games', icon: <Gamepad2 size={20} /> },
-    { name: 'History', path: '/history', icon: <History size={20} /> },
-    { name: 'Leaderboard', path: '/leaderboard', icon: <Trophy size={20} /> },
+    { name: 'Dashboard', path: '/dashboard', icon: <LayoutDashboard size={20} /> },
+    { name: 'Play Game', path: '/dashboard/games', icon: <Gamepad2 size={20} /> },
+    { name: 'History', path: '/dashboard/history', icon: <History size={20} /> },
+    { name: 'Leaderboard', path: '/dashboard/leaderboard', icon: <Trophy size={20} /> },
   ];
 
   return (
